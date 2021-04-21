@@ -43,26 +43,16 @@ namespace TicketsMNG.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] Ticket ticket)
         {
-            // Esto no es necesario en asp.net core 2.1 en adelante
-            //if (!ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
 
             context.Tickets.Add(ticket);
             context.SaveChanges();
-            return new CreatedAtRouteResult("ObtenerAutor", new { id = ticket.Id }, ticket);
+            return new CreatedAtRouteResult("ObtenerTicket", new { id = ticket.Id }, ticket);
 
         }
 
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] Ticket value)
         {
-            // Esto no es necesario en asp.net core 2.1
-            // if (ModelState.IsValid){
-
-            // }
-
             if (id != value.Id)
             {
                 return BadRequest();
