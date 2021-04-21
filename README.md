@@ -5,15 +5,17 @@
 2. En el archivo appsettings.json se encuentra la cadena de conexion la cual se debe editar de acuerdo a su configuracion local
     - Data Source=[Servidor]\\[Instancia];Initial Catalog=[base de datos];User ID=[usuario];Password=[Password]
     
-3. el proyecto esta configurado para iniciar como https://[localhots]:[puerto]/api/tickets
+3. El proyecto esta configurado para iniciar como https://[localhots]:[puerto]/api/tickets
 
-4. a continuacion se relacionan las busquedas en postman
+4. A continuación se relacionan las busquedas en postman
 
+BUSQUEDA GENERAL
   -Get busqueda general https://localhost:44368/api/Tickets
   
-  -Get busqueda filtrada https://localhost:44368/api/Tickets/[Id de ticket a editar]
+BUSQUEDA ESPECIFICA  
+  -Get busqueda filtrada https://localhost:44368/api/Tickets/[Id de ticket]
   
-  arroja un arreglo con todos los registro creados en la tabla
+CREACION DE REGISTRO
   
   - Post https://localhost:44368/api/Tickets 
   consulta Json
@@ -25,6 +27,8 @@
         "Status": "Cerrado"
 }
 
+EDICION DE REGISTRO
+
 -PuT https://localhost:44368/api/Tickets/[Id de ticket a editar]
 {
     "id": 1,
@@ -32,5 +36,7 @@
         "createdon": "2021-04-20",
         "Status": "Cerrado"
 }
+
+ELIMINACION DE REGISTRO
 
 - Delete https://localhost:44368/api/Tickets/[Id de ticket a editar]
